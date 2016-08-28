@@ -122,16 +122,24 @@ namespace SCReceiverTest
                 Console.WriteLine("Battery: " + (deviceState._axis10 * 100f).ToString("0.00") + "%");
                                 
 
-                joystick.SetAxis((int)(deviceState._axis0 * _axisRange + _axisRange), id, HID_USAGES.HID_USAGE_X);
-                joystick.SetAxis((int)(-deviceState._axis1 * _axisRange + _axisRange), id, HID_USAGES.HID_USAGE_Y);
-                joystick.SetAxis((int)(deviceState._axis13 * _axisRange + _axisRange), id, HID_USAGES.HID_USAGE_RX);
-                joystick.SetAxis((int)(deviceState._axis2 * _axisRange + _axisRange), id, HID_USAGES.HID_USAGE_RY);
-                joystick.SetAxis((int)(deviceState._axis14 * _axisRange + _axisRange), id, HID_USAGES.HID_USAGE_Z);
-                joystick.SetAxis((int)(deviceState._axis15 * _axisRange + _axisRange), id, HID_USAGES.HID_USAGE_RZ);
-                joystick.SetAxis((int)(deviceState._axis8 * _axisRange + _axisRange), id, HID_USAGES.HID_USAGE_SL0);
-                joystick.SetAxis((int)(deviceState._axis9 * _axisRange + _axisRange), id, HID_USAGES.HID_USAGE_SL1);
+                //joystick.SetAxis((int)(deviceState._axis0 * _axisRange + _axisRange), id, HID_USAGES.HID_USAGE_X);
+                //joystick.SetAxis((int)(-deviceState._axis1 * _axisRange + _axisRange), id, HID_USAGES.HID_USAGE_Y);
+                //joystick.SetAxis((int)(deviceState._axis13 * _axisRange + _axisRange), id, HID_USAGES.HID_USAGE_RX);
+                //joystick.SetAxis((int)(deviceState._axis2 * _axisRange + _axisRange), id, HID_USAGES.HID_USAGE_RY);
+                //joystick.SetAxis((int)(deviceState._axis3 * _axisRange + _axisRange), id, HID_USAGES.HID_USAGE_Z);
+                //joystick.SetAxis((int)(deviceState._axis14 * _axisRange + _axisRange), id, HID_USAGES.HID_USAGE_RZ);
+                //joystick.SetAxis((int)(deviceState._axis8 * _axisRange + _axisRange), id, HID_USAGES.HID_USAGE_SL0);
+                //joystick.SetAxis((int)(deviceState._axis9 * _axisRange + _axisRange), id, HID_USAGES.HID_USAGE_SL1);
 
-                
+                joystick.SetAxis((int)(deviceState._axis13 * _axisRange + _axisRange), id, HID_USAGES.HID_USAGE_X);
+                joystick.SetAxis((int)(-deviceState._axis2 * _axisRange + _axisRange), id, HID_USAGES.HID_USAGE_Y);
+                joystick.SetAxis((int)(-deviceState._axis1 * _axisRange + _axisRange), id, HID_USAGES.HID_USAGE_Z);
+                joystick.SetAxis((int)(deviceState._axis0 * _axisRange + _axisRange), id, HID_USAGES.HID_USAGE_RX);
+                joystick.SetAxis((int)(deviceState._axis8 * _axisRange + _axisRange), id, HID_USAGES.HID_USAGE_RY);
+                joystick.SetAxis((int)(deviceState._axis9 * _axisRange + _axisRange), id, HID_USAGES.HID_USAGE_RZ);
+                joystick.SetAxis((int)(deviceState._axis3 * _axisRange + _axisRange), id, HID_USAGES.HID_USAGE_SL0);
+                joystick.SetAxis((int)(deviceState._axis14 * _axisRange + _axisRange), id, HID_USAGES.HID_USAGE_SL1);
+
             }
         }
     }
