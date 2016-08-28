@@ -1,4 +1,5 @@
 
+using System;
 using System.IO;
 
 public class SCState
@@ -57,24 +58,23 @@ public class SCState
         bw.Write(_axis15);
     }
     
-
-    public void Deserialize(BinaryReader br)
+    public void Deserialize(byte[] data, int offset = 0)
     {
-        _axis0 = br.ReadSingle();
-        _axis1 = br.ReadSingle();
-        _axis2 = br.ReadSingle();
-        _axis3 = br.ReadSingle();
-        _axis4 = br.ReadSingle();
-        _axis5 = br.ReadSingle();
-        _axis6 = br.ReadSingle();
-        _axis7 = br.ReadSingle();
-        _axis8 = br.ReadSingle();
-        _axis9 = br.ReadSingle();
-        _axis10 = br.ReadSingle();
-        _axis11 = br.ReadSingle();
-        _axis12 = br.ReadSingle();
-        _axis13 = br.ReadSingle();
-        _axis14 = br.ReadSingle();
-        _axis15 = br.ReadSingle();
+        _axis0 = BitConverter.ToSingle(data, offset);
+        _axis1 = BitConverter.ToSingle(data, 4 + offset);
+        _axis2 = BitConverter.ToSingle(data, 4 * 2 + offset);
+        _axis3 = BitConverter.ToSingle(data, 4 * 3 + offset);
+        _axis4 = BitConverter.ToSingle(data, 4 * 4 + offset);
+        _axis5 = BitConverter.ToSingle(data, 4 * 5 + offset);
+        _axis6 = BitConverter.ToSingle(data, 4 * 6 + offset);
+        _axis7 = BitConverter.ToSingle(data, 4 * 7 + offset);
+        _axis8 = BitConverter.ToSingle(data, 4 * 8 + offset);
+        _axis9 = BitConverter.ToSingle(data, 4 * 9 + offset);
+        _axis10 = BitConverter.ToSingle(data, 4 * 10 + offset);
+        _axis11 = BitConverter.ToSingle(data, 4 * 11 + offset);
+        _axis12 = BitConverter.ToSingle(data, 4 * 12 + offset);
+        _axis13 = BitConverter.ToSingle(data, 4 * 13 + offset);
+        _axis14 = BitConverter.ToSingle(data, 4 * 14 + offset);
+        _axis15 = BitConverter.ToSingle(data, 4 * 15 + offset);
     }
 }
