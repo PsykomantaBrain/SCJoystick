@@ -61,15 +61,15 @@ public class SCState
 
 		// put buttons in a single flag
 		buttons = 0;
-		buttons |= (_buttonHome << 0);
-		buttons |= (_buttonSettings << 1);
-		buttons |= (_buttonRec << 2);
-		buttons |= (_buttonTakeOff << 3);
-		buttons |= (_buttonRTH << 4);
-		buttons |= (_buttonPhoto << 5);
-		buttons |= (_buttonThumbL << 6);
-		buttons |= (_buttonThumbR << 7);
-		br.Write(buttons);
+		buttons |= (byte)((_buttonHome ? 1 : 0) << 0);
+		buttons |= (byte)((_buttonSettings ? 1 : 0) << 1);
+		buttons |= (byte)((_buttonRec ? 1 : 0) << 2);
+		buttons |= (byte)((_buttonTakeOff ? 1 : 0) << 3);
+		buttons |= (byte)((_buttonRTH ? 1 : 0) << 4);
+		buttons |= (byte)((_buttonPhoto ? 1 : 0) << 5);
+		buttons |= (byte)((_buttonThumbL ? 1 : 0) << 6);
+		buttons |= (byte)((_buttonThumbR ? 1 : 0) << 7);
+		bw.Write(buttons);
 	}
 
 	public void Deserialize(byte[] data, int offset = 0)
